@@ -10,19 +10,13 @@ jdk:
 env:
   global:
   - JHIPSTER_MVN_DEP=1
-  - RUNTASK=1
-  - GRUNT=1
-  - PROTRACTOR=0
   - JHIPSTER_TRAVIS=$TRAVIS_BUILD_DIR/travis
   - JHIPSTER_INSTALL=$JHIPSTER_TRAVIS/install
   - JHIPSTER_SAMPLES=$JHIPSTER_TRAVIS/samples
   - JHIPSTER_SCRIPTS=$JHIPSTER_TRAVIS/scripts
   matrix:
-  - PROFILE=dev  JHIPSTER=app-default
-  - PROFILE=dev  JHIPSTER=app-gradle
-before_install:
-  - sudo service docker restart
-  - sudo /etc/init.d/postgresql stop
+  - JHIPSTER=app-default
+  - JHIPSTER=app-gradle
 install:
   - $JHIPSTER_INSTALL/02-install-jhipster-stack.sh
   - $JHIPSTER_INSTALL/03-downloadDep.sh
