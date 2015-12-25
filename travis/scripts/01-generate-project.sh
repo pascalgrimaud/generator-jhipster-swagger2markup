@@ -5,11 +5,7 @@ set -ev
 #-------------------------------------------------------------------------------
 mv -f $JHIPSTER_SAMPLES/$JHIPSTER $HOME/
 cd $HOME/$JHIPSTER
-if [ $GRUNT == 1 ]; then
-  rm -Rf $HOME/$JHIPSTER/node_modules/*gulp*
-else
-  rm -Rf $HOME/$JHIPSTER/node_modules/*grunt*
-fi
+rm -Rf $HOME/$JHIPSTER/node_modules/*gulp*
 npm link generator-jhipster
 yo jhipster --force --no-insight
 yo jhipster-swagger2markup default --force --no-insight
