@@ -5,7 +5,7 @@ set -ev
 #-------------------------------------------------------------------------------
 cd $HOME/$JHIPSTER
 if [ $JHIPSTER != "app-gradle" ]; then
-  mvn test -DskipTests=true
+  mvn install -DskipTests=true
   ls -al target/asciidoc/ target/asciidoc/html5/ target/asciidoc/pdf/
 else
   ./gradlew asciidoctor
